@@ -29,6 +29,15 @@ describe('Hello World:', function () {
    });
 
 });
+// import renderer from 'react-test-renderer';
+//
+//  it('should render to match the snapshot', function () {
+//    const component = renderer.create(
+//      <Hello friend="Luke"/>
+//    );
+//
+//    expect(component.toJSON()).toMatchSnapshot();
+//  });
 // What is happening here? We use the shallow renderer from Enzyme to render the component
 // into a sandboxed "document" so that we can perform inquiries. Notice that we are using
 // JSX in the shallow() method. Shallow testing is useful to isolate our test by not rendering any child components.
