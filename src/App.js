@@ -24,13 +24,16 @@ class App extends Component {
               <Route exact path="/projects" component={Projects}/>
               <Route path='/projects/detail/:_id' component={ProjectsDetail} />
               <Route path='/projects/create' component={ProjectsCreate} />
-
               <Route exact path="/employees" component={Employees}/>
+              <Route path='/employees/detail/:_id' component={EmployeesDetail} />
+              <Route path='/employees/create' component={EmployeesCreate} />
+              <Route exact path='/employees/:user_id/timesheets/detail/:_id' component={TimesheetsDetail} />
+              <Route path='/employees/:user_id/timesheets/detail/:timesheet_id/timeunits/create' component={TimeunitsCreate} />
+              <Route path='/employees/:user_id/timesheets/detail/:timesheet_id/timeunits/detail/:_id' component={TimeunitsDetail} />
+              <Route path='/timesheets/create' component={TimesheetsCreate} />
               {/* TODO - Add the employee detail and create routes*/}
-
               <Route exact path="/employees/:user_id/timesheets" component={Timesheets}/>
               {/* TODO - Add the timesheets detail and create routes */}
-
               {/* TODO - Add the timeunits detail and create routes*/}
 
               <Redirect to="/employees"/>

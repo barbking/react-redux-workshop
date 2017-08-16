@@ -11,13 +11,30 @@ import { withRouter } from 'react-router';
 
 class TimesheetsCreate extends Component {
 
-  // TODO - implement me
-
-  render() {
-    return (
-      <div/>
-    );
+  constructor(props) {
+    super(props);
+    this.props.employeeActions.listEmployees();
+    this.handleSave = this.handleSave.bind(this);
   }
+
+  handleSave(timesheet){
+  this.props.actions.createTimesheet(timesheet).then(() => {
+    this.props.history.push('/employees/all/timesheets');
+  });
+}
+
+render() {
+return (
+  <Grid>
+    <Row>
+      <PageHeader>Timesheet Create</PageHeader>
+    </Row>
+    <Row>
+      <TimesheetForm employees={this.props.employees} handleSave={this.handleSave}/>
+    </Row>
+  </Grid>
+);
+}
 }
 
 TimesheetsCreate.propTypes = {
